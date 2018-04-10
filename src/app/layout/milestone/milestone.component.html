@@ -1,0 +1,112 @@
+ <div class="card">
+    <div class="card-header-sm">
+    <nav class="navbar navbar-light bg-light justify-content-between">
+          <a class="navbar-brand">Milestones {{id}}</a>
+          <!--<button type="button" class="btn btn-success " data-toggle="modal" data-target="#milestoneModal">Add</button>-->
+          <ngbd-modal-basic></ngbd-modal-basic>
+    </nav>
+ </div>               
+                        <!-- /.card-heading -->
+<div class="card-body">
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Project</th>
+                <th>Priority</th>
+                <th>Release</th>
+                <th>Dependency</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let milestone of milestoneList;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{milestone.project}}</td>
+                <td>{{milestone.priority}}</td>
+                <td>{{milestone.milestoneDate}}</td>
+                <td>{{milestone.dependency}}</td>
+            </tr>
+         </tbody>
+    </table>
+</div>
+<!-- /.table-responsive -->
+</div>
+<!-- /.card-body -->
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="milestoneModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add Milestone</h4>
+                <form role="form">
+              <div class="form-group">
+                  <label>Project</label>
+                  <select class="form-control">
+                  <option>Select Project</option>
+                      <option>Project1</option>
+                      <option>Project2</option>
+                      <option>Project3</option>
+                      <option>Project4</option>
+                      <option>Project5</option>
+                  </select>
+                  
+                  <label>Release</label>
+                  <input class="form-control"/>
+                  
+                  <label>Milestone Description</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                  
+                  <label>Milestone Date</label>
+                  <input class="form-control"/>
+                  
+                  <label>Priority</label>
+                  <select class="form-control">
+                    <option>Select Priority</option>
+                      <option>Priority1</option>
+                      <option>Priority2</option>
+                      <option>Priority3</option>
+                      <option>Priority4</option>
+                      <option>Priority5</option>
+                  </select>
+                  
+                    <label>Level</label>
+                  <select class="form-control">
+                    <option>Select Level</option>
+                      <option>Level1</option>
+                      <option>Level2</option>
+                      <option>Level3</option>
+                      <option>Level4</option>
+                      <option>Level5</option>
+                  </select>
+                  
+                  <label>Dependency</label>
+                  <input class="form-control"/>
+                  
+                    <label>Notes</label>
+                  <input class="form-control"/>
+                  
+                  
+              </div>
+              </form>
+            </div>
+            <!--  <div class="modal-body">
+                Add Milestone
+            </div> -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+                     
+                     

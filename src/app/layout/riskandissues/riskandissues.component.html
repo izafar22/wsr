@@ -1,0 +1,48 @@
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover" style="width: auto" id="riskTable">
+      <thead>
+        <tr>
+            <th>Select</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Module</th>
+          <th>Impact</th>
+          <th>Identification Date</th>
+          <th>Target Date</th>
+          <th>Mitigation/Action Plan</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="odd gradeX">
+        <td></td>
+          <td><select>
+              <option value="Risk">Risk</option>
+              <option value="Issue">Issue</option>
+          </select></td>
+          <td><textarea
+              placeholder="explain risk / issue"></textarea></td>
+          <td><input type="text"
+            placeholder="Module Name" /></td>
+          <td><select>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+          </select></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><textarea placeholder="Plan to resolve"></textarea></td>
+          <td><select>
+              <option value="Open">Open</option>
+              <option value="Closed">Closed</option>
+          </select></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <button type="button" onclick="newRisk()"
+      class="btn btn-success btn-xs">Add</button>
+    <button type="button"
+      onclick="deleteRow('riskTable')"
+      class="btn btn-success btn-xs">Delete</button>

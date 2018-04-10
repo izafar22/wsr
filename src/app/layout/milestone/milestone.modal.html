@@ -1,0 +1,83 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <b>Add Milestone</b>
+  </div>
+  <div class="modal-body" >   
+          <form (ngSubmit)="onSubmit(milestoneForm)" #milestoneForm="ngForm"  >
+            <div class="form-group">
+            
+              <label>Project/Module</label> 
+              <select class="form-control"
+               id="project"
+                type="text"
+                ngModel
+                name="project">
+                <option>Select Project</option>
+                <option>Project1</option>
+                <option>Project2</option>
+                <option>Project3</option>
+                <option>Project4</option>
+                <option>Project5</option>
+              </select> 
+              
+              <label>Release</label> 
+              <input class="form-control"
+              id="release"
+              type="text"
+               ngModel
+              name="release" /> 
+              
+              <label>Milestone
+                Description</label>
+              <textarea class="form-control" rows="3"
+              id="milestoneDesc"
+                type="text"
+                ngModel
+                name="milestoneDesc"></textarea>
+
+              <label>Milestone Date</label> 
+              <input class="form-control"
+               id="milestoneDate"
+                type="date"
+                ngModel
+                name="milestoneDate" />
+
+              <label>Priority</label> 
+              <select class="form-control"
+              id="priority"
+                type="number"
+                ngModel
+                name="priority" >
+                <option>Select Priority</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select> 
+              
+                         
+              <label>Dependency</label> 
+              <input class="form-control" 
+               id="dependency"
+                type="text"
+                ngModel
+                name="dependency"/>
+              
+              <label>Notes</label> 
+              <input class="form-control"
+               id="notes"
+                type="text"
+                ngModel
+                name="notes" />
+           </div>
+           <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    <button type="button" class="btn bg-success"  type="submit">Save</button>
+  </div>
+          </form>
+        </div>
+  
+</ng-template>
+
+<button class="btn btn-md btn-outline-success" (click)="open(content)">Add</button>

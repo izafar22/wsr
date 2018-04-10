@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Project Management Dashboard</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    
+  	<script src="../css/graph/vis.min.js"></script>
+    <link href="../css/graph/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+   
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-static-top" role="navigation"
+			style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">Project Management
+					System</a>
+			</div>
+			<!-- /.navbar-header -->
+
+
+			<!-- /.navbar-top-links -->
+
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+
+						<li><a href="index.html">Account- CITI Bank</a></li>
+						<li><a href="#"> Approvals <span class="fa arrow"></span></a>
+
+							<ul class="nav nav-second-level">
+								<li><a href="">CDM </a>
+									<ul class="nav nav-third-level">
+										<li><a href="milestones.html">Milestones <span
+												class="badge badge-info">2</span></a></li>
+										<li><a href="risks.html">Risks <span
+												class="badge badge-info">10</span></a></li>
+										<li><a href="issues.html">Issues <span
+												class="badge badge-info">4</span></a>
+										<li><a href="users.html">Resources <span
+												class="badge badge-info">8</span></a></li>
+									</ul></li>
+							</ul>
+							<ul class="nav nav-second-level">
+								<li><a href="">Flex Migration </a>
+									<ul class="nav nav-third-level">
+										<li><a href="milestones.html">Milestones <span
+												class="badge badge-info">2</span></a></li>
+										<li><a href="risks.html">Risks <span
+												class="badge badge-info">10</span></a></li>
+										<li><a href="issues.html">Issues <span
+												class="badge badge-info">4</span></a>
+										<li><a href="users.html">Resources <span
+												class="badge badge-info">8</span></a></li>
+									</ul></li>
+							</ul> <!-- /.nav-second-level --></li>
+						<li><a href="#">StressTest<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="milestones.html">Milestones <span
+										class="badge badge-info">2</span></a></li>
+								<li><a href="risks.html">Risks <span
+										class="badge badge-info">10</span></a></li>
+								<li><a href="issues.html">Issues <span
+										class="badge badge-info">4</span></a></li>
+								<li><a href="users.html">Resources <span
+										class="badge badge-info">8</span></a></li>
+							</ul> <!-- /.nav-second-level --></li>
+						<li><a href="#">CCAR<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="milestones.html">Milestones <span
+										class="badge badge-info">2</span></a></li>
+								<li><a href="risks.html">Risks <span
+										class="badge badge-info">10</span></a></li>
+								<li><a href="issues.html">Issues <span
+										class="badge badge-info">4</span></a></li>
+								<li><a href="users.html">Resources <span
+										class="badge badge-info">8</span></a></li>
+							</ul> <!-- /.nav-second-level --></li>
+					</ul>
+				</div>
+				<!-- /.sidebar-collapse -->
+			</div>
+			<!-- /.navbar-static-side -->
+		</nav>
+
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-desktop fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">26</div>
+									<div>Projects</div>
+								</div>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left" class="btn btn-success btn-xs"
+									data-toggle="modal" href="viewProjectDetail.html" data-target="#projectModel">View
+									Details</span> <span class="pull-right"><i
+									class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-green">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-tasks fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">12</div>
+									<div>Finance</div>
+								</div>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left">View Details</span> <span
+									class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-yellow">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-user fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">124</div>
+									<div>Resources</div>
+								</div>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left">View Details</span> <span
+									class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-red">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-warning fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">13</div>
+									<div>Risks & Issues!</div>
+								</div>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left" class="btn btn-success btn-xs"
+									data-toggle="modal" href="viewRiskIssue.html" data-target="#riskIssueModel">View
+									Details</span> <span class="pull-right"><i
+									class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							Milestones
+							<div class="pull-right">
+										<a type="button" class="btn btn-success btn-xs"
+									data-toggle="modal" href="milestoneModal.html" data-target="#milestoneModal">Add</a>
+							</div>
+ <!-- Modal -->
+ <div class="modal fade" id="milestoneModal" tabindex="-1"
+								role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+					    <!--   <iframe src="./milestoneModal.html" ></iframe>  -->
+                                </div>
+							</div>
+                                </div>
+							
+             </div>
+
+						<!-- ======================== issue form ==================== -->
+
+						<!-- Modal -->
+						<div class="modal fade" id="issueModal" tabindex="-1"
+							role="dialog" aria-labelledby="addIssuelLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">	
+								</div>
+								<!-- /.modal-content -->
+							</div>
+							<!-- /.modal-dialog -->
+						</div>
+						<!-- ====================View details Project ============================== -->
+						<div class="modal fade" id="projectModel" tabindex="-1"
+							role="dialog" aria-labelledby="addIssuelLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+								</div>
+								<!-- /.modal-content -->
+							</div>
+							<!-- /.modal-dialog -->
+						</div>
+						<!-- ========================View project Model end====================== -->
+
+						<!-- =====================View details Risk & Issues====================== -->
+						<div class="modal fade" id="riskIssueModel" tabindex="-1"
+							role="dialog" aria-labelledby="addIssuelLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									
+								</div>
+								<!-- /.modal-content -->
+							</div>
+							<!-- /.modal-dialog -->
+						</div>
+						<!-- ======================View Risk & Issues Model ends=================== -->
+						<!-- ======================== Risk form ==================== -->
+
+						<!-- Modal -->
+						<div class="modal fade" id="riskModal" tabindex="-1" role="dialog"
+							aria-labelledby="addRisklLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+								</div>
+								<!-- /.modal-content -->
+							</div>
+							<!-- /.modal-dialog -->
+						</div>
+
+
+
+
+
+						<!-- ======================== Comments form ==================== -->
+
+						<!-- Modal -->
+						<div class="modal fade" id="commentModal" tabindex="-1"
+							role="dialog" aria-labelledby="commentlLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+								</div>
+								<!-- /.modal-content -->
+							</div>
+							<!-- /.modal-dialog -->
+						</div>
+
+
+
+						<!-- ======================== WSR form ==================== -->
+
+						<!-- Modal -->
+						<div class="modal fade" id="WSRModal" tabindex="-1" role="dialog"
+							aria-labelledby="WSRLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+							</div>
+								<!-- /.modal-content -->
+							</div>
+							<!-- /.modal-dialog -->
+						</div>
+
+
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+
+							<div id="visualization"></div>
+							<script>
+								// create groups to highlight groupUpdate
+								var groups = new vis.DataSet([ {
+									id : 1,
+									content : 'Citi Approvals'
+								}, {
+									id : 2,
+									content : 'Stresstest '
+								} ]);
+								// create a DataSet with items
+								var items = new vis.DataSet([ {
+									id : 1,
+									content : 'Approval Release Complete',
+									editable : true,
+									start : '2010-08-23',
+									group : 1
+								}, {
+									id : 2,
+									content : 'Server Installation',
+									editable : true,
+									start : '2010-08-23T23:00:00',
+									group : 2
+								}, {
+									id : 3,
+									content : 'VDI setUp',
+									editable : false,
+									start : '2010-08-24T16:00:00',
+									group : 1
+								}, {
+									id : 4,
+									content : 'Sprint 1.6',
+									editable : false,
+									start : '2010-08-26',
+									end : '2010-09-02',
+									group : 2
+								}, {
+									id : 5,
+									content : 'Sprint 2.3',
+									editable : {
+										updateTime : true,
+										updateGroup : false,
+										remove : false
+									},
+									start : '2010-08-28',
+									group : 1
+								}, {
+									id : 6,
+									content : 'Regression Complete',
+									editable : {
+										updateTime : false,
+										updateGroup : true,
+										remove : false
+									},
+									start : '2010-08-29',
+									group : 2
+								}, {
+									id : 7,
+									content : 'Finish Grooming',
+									editable : {
+										updateTime : false,
+										updateGroup : false,
+										remove : true
+									},
+									start : '2010-08-31',
+									end : '2010-09-03',
+									group : 1
+								}, {
+									id : 8,
+									content : 'CDM Release',
+									start : '2010-09-04T12:00:00',
+									group : 2
+								} ]);
+
+								var container = document
+										.getElementById('visualization');
+								var options = {
+									editable : true
+								// default for all items
+								};
+
+								var timeline = new vis.Timeline(container,
+										items, options);
+							</script>
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							</i> Issues & Risks
+
+						</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="panel panel-yellow">
+										<div class="panel-heading">
+											Issues
+											<div class="pull-right">
+												<a type="button" class="btn btn-success btn-xs"
+													data-toggle="modal" href="issueModal.html" data-target="#issueModal">Add</a>
+											</div>
+
+
+
+
+										</div>
+										<div class="panel-body">
+											<ul>
+												<li><p class="text-warning">Mohit's VDI is not
+														working.It will hamper deadline</p></li>
+												<li><p class="text-warning">Velocity Issue</p></li>
+											</ul>
+										</div>
+
+									</div>
+									<!-- /.col-lg-4 -->
+								</div>
+								<div class="col-lg-6">
+									<div class="panel panel-red">
+										<div class="panel-heading">
+											Risks
+											<div class="pull-right">
+
+												<a type="button" class="btn btn-success btn-xs"
+													data-toggle="modal" href="riskModal.html" data-target="#riskModal">Add</a>
+											</div>
+										</div>
+										<div class="panel-body">
+											<ul>
+
+												<li><p class="text-danger">JIRA CJ057-1234 deadline
+														cannot be completed due to ecore .</p></li>
+												<li><p class="text-danger">DM dependency.</p></li>
+											</ul>
+										</div>
+
+									</div>
+									<!-- /.col-lg-4 -->
+								</div>
+								<!-- /.col-lg-4 (nested) -->
+
+								<!-- /.col-lg-8 (nested) -->
+							</div>
+							<!-- /.row -->
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+
+				</div>
+				<!-- /.col-lg-8 -->
+				<div class="col-lg-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							Weekly Status Report
+							<div class="pull-right">
+								<a type="button" class="btn btn-success btn-xs"
+									data-toggle="modal" href="WSRModal.html" data-target="#WSRModal">Add</a>
+
+							</div>
+						</div>
+						<!-- .panel-heading -->
+						<div class="panel-body">
+							<div class="panel-group" id="accordion">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapseOne">Key Accomplishment</a>
+										</h4>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse in">
+										<div class="panel-body">
+											<ul>
+												<li>
+													<p class="text-info">Aug Release successful</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapseTwo">Next Step</a>
+										</h4>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse">
+										<div class="panel-body">
+											<ul>
+												<li>
+													<p class="text-info">To close all the open bugs for
+														previous release</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordion"
+												href="#collapseThree">Previous Week's Achievement</a>
+										</h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse">
+										<div class="panel-body">
+											<ul>
+												<li>
+													<p class="text-info">eCore Patch release successful</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- .panel-body -->
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<i class="fa fa-bar-chart-o fa-comments"></i> Comments
+							<div class="pull-right">
+								<a type="button" class="btn btn-success btn-xs"
+									href="commentModal.html" data-toggle="modal"  data-target="#commentModal">Add</a>
+							</div>
+						</div>
+						<div class="panel-body">
+							<p class="text-info">eCore Jira must be raised before every
+								sprint</p>
+							<!-- /.panel-body -->
+						</div>
+						<!-- /.panel -->
+						<!-- /.panel .chat-panel -->
+					</div>
+					<!-- /.col-lg-4 -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /#page-wrapper -->
+
+		</div>
+		<!-- /#wrapper -->
+
+		<!-- jQuery -->
+		<script src="../vendor/jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Metis Menu Plugin JavaScript -->
+		<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+		<!-- Morris Charts JavaScript -->
+		<script src="../vendor/raphael/raphael.min.js"></script>
+		<script src="../vendor/morrisjs/morris.min.js"></script>
+		<script src="../data/morris-data.js"></script>
+
+ <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    
+		<!-- Custom Theme JavaScript -->
+		<script src="../dist/js/sb-admin-2.js"></script>
+			<script>
+			var cur_id;
+			var i=0;
+		function newUpdate() {
+			var div;
+			if(document.getElementById('updates')!=null)
+	        div= document.getElementById('updates');
+			else{
+				document.getElementById('keyUpdate').innerHTML += "<div id='updates'></div>";
+			      div = document.getElementById('updates');
+			}
+	       var y = document.createElement("textarea");
+	       y.setAttribute("id", "text"+i);
+	       y.setAttribute("rows","2");
+	       y.setAttribute("class", "form-control");
+	       y.setAttribute("onClick", "setId(this.id)");
+	       div.appendChild(y);
+            i=i+1;
+		}
+		function setId(id) {
+		    cur_id = id;
+		}
+		 function deleteUpdate() {
+		     var x = document.getElementById(cur_id);
+		     x.remove(); 
+		 } 
+		 function newRisk() {
+			 var currentIndex =document.getElementById("riskTable").rows.length;
+				var table = document.getElementById("riskTable").insertRow(currentIndex).innerHTML = '<tr class="odd gradeX"><td style="text-align: center;"><input type="checkbox" /></td><td><select><option value="Risk">Risk</option><option value="Issue">Issue</option></select></td><td><textarea placeholder="explain risk / issue"></textarea></td><td><input type="text" placeholder="Module Name" /></td><td><select><option value="Low">Low</option><option value="Medium">Medium</option><option value="High">High</option></select></td><td><input type="text" /></td><td><input type="text" /></td><td><textarea placeholder="Plan to resolve"></textarea></td><td><select><option value="Open">Open</option><option value="Closed">Closed</option></select></td></tr>';
+			}
+
+			function newMilestone() {
+				 var currentIndex =document.getElementById("milestoneTable").rows.length;
+				var table = document.getElementById("milestoneTable")
+						.insertRow(currentIndex).innerHTML = '<tr class="odd gradeX"><td style="text-align: center;"><input type="checkbox" /></td><td><textarea placeholder="explain milestone"></textarea></td><td><input type="text" placeholder="Comment" /></td><td><input type="text" placeholder="Project" /></td><td><input type="text" /></td><td><input type="text" /></td><td><input type="text" /></td><td><INPUT TYPE="NUMBER" MIN="0" MAX="100" STEP="1" VALUE="0"></td></tr>';
+			}
+
+			function deleteRow(tableID) {
+				try {
+					var table = document.getElementById(tableID);
+					var rowCount = table.rows.length;
+					for (var i = 0; i < rowCount; i++) {
+						var row = table.rows[i];
+						var chkbox = row.cells[0].childNodes[0];
+						if (null != chkbox && true == chkbox.checked) {
+							table.deleteRow(i);
+							rowCount--;
+							i--;
+						}
+					}
+				} catch (e) {
+					alert(e);
+				}
+			}
+		</script>
+</body>
+
+</html>
